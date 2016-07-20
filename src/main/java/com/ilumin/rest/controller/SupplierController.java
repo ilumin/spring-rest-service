@@ -28,8 +28,10 @@ public class SupplierController {
         // modified data for HATEOAS
         for (final Supplier supplier: suppliers) {
             Integer supplierId = supplier.getSupplierId();
-            Link selfLink = linkTo(SupplierController.class).slash(supplierId).withSelfRel();
-            supplier.add(selfLink);
+            if (!supplier.hasLink("self")) {
+                Link selfLink = linkTo(SupplierController.class).slash(supplierId).withSelfRel();
+                supplier.add(selfLink);
+            }
         }
 
         return suppliers;
