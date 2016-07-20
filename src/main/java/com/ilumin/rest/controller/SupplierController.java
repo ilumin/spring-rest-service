@@ -1,12 +1,10 @@
 package com.ilumin.rest.controller;
 
-import com.google.common.base.Preconditions;
 import com.ilumin.persistence.model.Supplier;
 import com.ilumin.persistence.service.SupplierService;
 import com.ilumin.rest.util.RestPreconditions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Link;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
